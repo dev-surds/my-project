@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Neuronova</title>
+    <style>
+        /* General Styling */
+        * * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #6e8efb;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        
+        header {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+        
+        nav ul li {
+            padding: 0;
+        }
+        
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            margin-bottom: 3rem;
+        }
+        
+        h1, h2, h3 {
+            color: #444;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 3rem;
+        }
+        
+
+        /* Introduction Section */
+        .intro {
+            margin: 40px 0;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .intro h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        /* Content Columns */
+        .content-columns {
+            display: flex;
+            margin-bottom: 40px;
+            gap: 20px;
+        }
+
+        .column {
+            flex: 1;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .column h2 {
+            font-size: 24px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+
+        /* Innovations Section */
+        .innovations {
+            margin: 40px 0;
+        }
+
+        .innovations h2 {
+            font-size: 28px;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #fff;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+        }
+
+        .innovation-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .innovation-item {
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .innovation-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .innovation-image {
+            height: 200px;
+            background-color: #eaeaea;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        .innovation-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .innovation-content {
+            padding: 20px;
+        }
+
+        /* Why Choose Us Section */
+        .why-choose {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 40px;
+        }
+
+        .why-choose h2 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .benefits {
+            margin-top: 20px;
+        }
+
+        .benefit-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+
+        .check-icon {
+            color: #2ecc71;
+            font-size: 18px;
+            margin-right: 10px;
+        }
+
+        .benefit-text {
+            flex: 1;
+        }
+
+        .cta {
+            text-align: center;
+            margin: 20px 0;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        /* Video Section */
+        .video-section {
+            margin: 40px 0;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 20px auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .video-container video {
+            width: 100%;
+            display: block;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 40px 0 20px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 0 20px;
+        }
+
+        .footer-section h3 {
+            color: #fff;
+            margin-bottom: 15px;
+            border-bottom: 1px solid #3498db;
+            padding-bottom: 10px;
+        }
+
+        .social-links a {
+            color: #fff;
+            margin-right: 10px;
+            text-decoration: none;
+        }
+
+        .social-links a:hover {
+            color: #3498db;
+        }
+
+        .newsletter-form {
+            display: flex;
+            margin-top: 10px;
+        }
+
+        .newsletter-form input {
+            padding: 8px;
+            border: none;
+            border-radius: 4px 0 0 4px;
+            width: 70%;
+        }
+
+        .newsletter-form button {
+            padding: 8px 15px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 0 4px 4px 0;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            background-color: #2980b9;
+        }
+
+        .copyright {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+        }
+
+        /* Media Queries for Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                padding: 10px 0;
+            }
+            
+            header .nav-links {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            header .nav-links li {
+                margin: 5px 0;
+            }
+            
+            .content-columns {
+                flex-direction: column;
+            }
+            
+            .innovation-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+            header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 0 20px;
+            }
+            
+            .innovation-grid {
+                gap: 20px;
+            }
+        }
+
+        /* Animation Effects */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .intro, .content-columns, .innovations, .why-choose, .video-section {
+            animation: fadeIn 1s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Neuronova</h1>
+        <p>The Next Generation of AI-Enhanced Eyewear</p>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html" class="active">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="gallery.html">Gallerly</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="intro">
+            <div class="intro-text">
+                <h1>About NeuronOva</h1>
+                <p>At NeuronOva, we are at the forefront of merging artificial intelligence with cutting-edge electronics to redefine human interaction with technology. From AI-powered smart glasses to next-gen gaming eyewear and intelligent smart lenses, we are revolutionizing the way people see, play, and experience the world.</p>
+            </div>
+        </section>
+        
+        <section class="content-columns">
+            <div class="column">
+                <h2>Our Mission</h2>
+                <p>We strive to create intelligent, user-centric AI electronics that enhance daily life, improve efficiency, and provide immersive experiences. Whether it's AI-driven augmented reality glasses, adaptive gaming eye-wear, or biometric smart lenses, our technology seamlessly integrates with human vision to unlock new possibilities.</p>
+            </div>
+            <div class="column">
+                <h2>Our Vision</h2>
+                <p>We envision a future where AI-powered electronics become an extension of human capability—enhancing vision, automating tasks, and creating hyper-personalized experiences for every user.</p>
+            </div>
+        </section>
+        
+        <section class="innovations">
+            <h2>Our Innovations</h2>
+            <div class="innovation-grid">
+                <div class="innovation-item">
+                    <div class="innovation-image">
+                        <img src="C:\Users\ADMIN\Pictures\Camera Roll\whole html code\1st spects.jpg" alt="AI Smart Glasses">
+                    </div>
+                    <div class="innovation-content">
+                        <h3>AI Smart Glasses</h3>
+                        <p>Real-time language translation, facial recognition, and AR overlays.</p>
+                    </div>
+                </div>
+                <div class="innovation-item">
+                    <div class="innovation-image">
+                        <img src="C:\Users\ADMIN\Pictures\Camera Roll\whole html code\1st vr.jpg" alt="AI Gaming Eye-wear">
+                    </div>
+                    <div class="innovation-content">
+                        <h3>AI Gaming Eye-wear</h3>
+                        <p>Adaptive displays, real-time motion tracking, and fatigue reduction for gamers.</p>
+                    </div>
+                </div>
+                <div class="innovation-item">
+                    <div class="innovation-image">
+                        <img src="C:\Users\ADMIN\Pictures\Camera Roll\whole html code\1st eye lense.jpg" alt="AI Smart Lenses">
+                    </div>
+                    <div class="innovation-content">
+                        <h3>AI Smart Lenses</h3>
+                        <p>Health monitoring, auto-focus vision correction, and personalized HUD displays.</p>
+                    </div>
+                </div>
+                <div class="innovation-item">
+                    <div class="innovation-image">
+                        <img src="C:\Users\ADMIN\Pictures\Camera Roll\whole html code\1st items.jpg" alt="AI Wearable Displays">
+                    </div>
+                    <div class="innovation-content">
+                        <h3>AI Wearable Displays</h3>
+                        <p>Lightweight, interactive, and optimized for productivity and entertainment.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="why-choose">
+            <h2>Why Choose NeuronOva?</h2>
+            <div class="benefits">
+                <div class="benefit-item">
+                    <div class="check-icon">✅</div>
+                    <div class="benefit-text">
+                        <h3>Cutting-Edge AI Technology</h3>
+                        <p>We integrate machine learning and real-time processing for unmatched intelligence.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="check-icon">✅</div>
+                    <div class="benefit-text">
+                        <h3>User-Centric Design</h3>
+                        <p>Our products enhance convenience, comfort, and performance.</p>
+                    </div>
+                </div>
+                <div class="benefit-item">
+                    <div class="check-icon">✅</div>
+                    <div class="benefit-text">
+                        <h3>Future-Ready Solutions</h3>
+                        <p>We are constantly evolving with AI advancements to stay ahead.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="cta">
+                <p>Join us in shaping the future of AI-driven electronics! Experience intelligence, redefined.</p>
+            </div>
+        </section>
+
+        <section class="video-section">
+            <h2>See Our Technology in Action</h2>
+            <div class="video-container">
+            <iframe width="854" height="560"
+               src="https://youtu.be/a1Z12O5abgU"
+               frameborder="0"
+               allow="autoplay;picture-in-picture"
+               allowfullscreen
+            </iframe>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Email: contact@neuronova.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/neuronova" target="_blank">Facebook</a>
+                    <a href="https://www.twitter.com/neuronova" target="_blank">Twitter</a>
+                    <a href="https://www.instagram.com/neuronova" target="_blank">Instagram</a>
+                    <a href="https://www.linkedin.com/company/neuronova" target="_blank">LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Newsletter</h3>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 Neuronova. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <audio id="background-audio" loop>
+        <source src="audio/ambient-tech.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <script>
+        // Audio controls would be placed here
+        // document.getElementById('background-audio').play();
+    </script>
+</body>
+</html>

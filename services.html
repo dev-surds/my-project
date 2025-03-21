@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuronOva -services-neuronov</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        /* Header Section */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #6e8efb;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #6e8efb, #a777e3);
+            color: white;
+            padding: 1rem 0;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        
+        nav ul {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+        }
+        
+        nav ul li {
+            padding: 0;
+        }
+        
+        nav ul li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: #555;
+        }
+        
+        main {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+        
+        section {
+            margin-bottom: 0rem;
+        }
+        
+        h1, h2, h3 {
+            color: #444;
+            margin-bottom: 1rem;
+        }
+        
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+            margin-top: 10rem;
+        }
+
+        /* Demo Section */
+        .demo-section {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 40px;
+            gap: 20px;
+        }
+
+        .demo-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            width: 300px;
+            text-align: center;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .demo-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+            background-color: #e0e0e0; /* Placeholder background */
+        }
+
+        .demo-card h2 {
+            font-size: 1.5em;
+            margin: 15px 0;
+        }
+
+        .demo-card ul {
+            list-style-type: none;
+            padding: 0;
+            text-align: left;
+            margin: 20px 10px;
+        }
+
+        .demo-card li {
+            margin-bottom: 8px;
+        }
+
+        /* Request Demo Section */
+        .request-demo {
+            background: #007BFF;
+            color: white;
+            padding: 40px 20px;
+        }
+
+        .request-demo button {
+            background: white;
+            color: #007BFF;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .request-demo button:hover {
+            background: #0056b3;
+            color: white;
+        }
+
+        /* Pop-up Form */
+        .popup {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+        }
+
+        .popup-content {
+            background: white;
+            width: 80%;
+            max-width: 500px;
+            margin: 10% auto;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+            position: relative;
+        }
+
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        form {
+            margin-top: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        form button:hover {
+            background-color: #0056b3;
+        }
+
+        #formMessage {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Neuronova</h1>
+        <p>The Next Generation of AI-Enhanced Eyewear</p>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html"class="active">Services</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="intro">
+            <div class="intro-text">
+        <h1>Experience the Future of Neuronova</h1>
+        <p>Explore how our smart AI-powered devices can transform the way you see, play, and interact.</p>
+    </header>
+
+    <!-- Product Demo Section -->
+    <section class="demo-section">
+        <div class="demo-card">
+            <img src="/api/placeholder/400/320" alt="AI Smart Glasses">
+            <h2>AI Smart Glasses</h2>
+            <ul>
+                <li>✔ Real-Time Translation</li>
+                <li>✔ Augmented Reality Overlays</li>
+                <li>✔ Voice & Gesture Control</li>
+            </ul>
+        </div>
+
+        <div class="demo-card">
+            <img src="/api/placeholder/400/320" alt="AI Gaming Eye-wear">
+            <h2>AI Gaming Eye-wear</h2>
+            <ul>
+                <li>✔ Adaptive Visuals</li>
+                <li>✔ Real-Time Motion Tracking</li>
+                <li>✔ Eye-Strain Reduction</li>
+            </ul>
+        </div>
+
+        <div class="demo-card">
+            <img src="/api/placeholder/400/320" alt="AI Smart Lenses">
+            <h2>AI Smart Lenses</h2>
+            <ul>
+                <li>✔ Auto-Focus Vision Enhancement</li>
+                <li>✔ Health Monitoring</li>
+                <li>✔ Smart Notifications</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Request Demo Section -->
+    <section class="request-demo">
+        <h2>Book a Live Demo</h2>
+        <p>Want to experience our AI-powered electronics firsthand? Schedule a demo today.</p>
+        <button id="openDemoForm">📅 Schedule a Demo</button>
+    </section>
+
+    <!-- Pop-up Form -->
+    <div id="demoFormPopup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times:</span>
+            <h2>Request a Demo</h2>
+            <form id="demoForm">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="product">Select a Product:</label>
+                <select id="product" name="product">
+                    <option value="AI Smart Glasses">AI Smart Glasses</option>
+                    <option value="AI Gaming Eye-wear">AI Gaming Eye-wear</option>
+                    <option value="AI Smart Lenses">AI Smart Lenses</option>
+                </select>
+
+                <label for="date">Preferred Date:</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="comments">Additional Comments:</label>
+                <textarea id="comments" name="comments" rows="3"></textarea>
+
+                <button type="submit">Submit Request</button>
+            </form>
+            <div id="formMessage"></div>
+        </div>
+    </div>
+
+    <script>
+        // Open the pop-up form
+        document.getElementById("openDemoForm").onclick = function() {
+            document.getElementById("demoFormPopup").style.display = "block";
+        };
+
+        // Close the pop-up form
+        document.querySelector(".close").onclick = function() {
+            document.getElementById("demoFormPopup").style.display = "none";
+        };
+
+        // Close pop-up if user clicks outside of it
+        window.onclick = function(event) {
+            let popup = document.getElementById("demoFormPopup");
+            if (event.target == popup) {
+                popup.style.display = "none";
+            }
+        };
+
+        // Handle form submission (Demo version - no actual server submission)
+        document.getElementById("demoForm").onsubmit = function(event) {
+            event.preventDefault();
+            
+            // Get form data for display
+            const name = document.getElementById("name").value;
+            const product = document.getElementById("product").value;
+            const date = document.getElementById("date").value;
+            
+            // Show success message
+            let messageBox = document.getElementById("formMessage");
+            messageBox.innerHTML = <p style='color: green;'>Thank you ${name}! Your demo for ${product} on ${date} has been scheduled. We'll contact you soon.</p>;
+            
+            // Reset the form after 3 seconds
+            setTimeout(function() {
+                document.getElementById("demoForm").reset();
+                messageBox.innerHTML = "";
+                document.getElementById("demoFormPopup").style.display = "none";
+            }, 3000);
+        };
+    </script>
+</body>
+</html>
